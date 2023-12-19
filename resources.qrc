@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/gpm_grid_data_reader" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>

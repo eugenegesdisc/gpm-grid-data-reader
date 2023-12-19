@@ -1,0 +1,47 @@
+# This file contains metadata for your plugin.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=GPM Grid Data Reader
+qgisMinimumVersion=3.0
+description=Read gridded data of GPM (L3 reguarly gridded)
+version=0.1
+author=GES DISC & George Mason University
+email=gyu@gmu.edu
+
+about=This plugin helps in read grid products of GPM in netCDF format. It tries to get proper GeoTransform from the data.
+
+tracker=http://bugs
+repository=https://github.com/eugenegesdisc/gpm-grid-data-reader
+# End of mandatory metadata
+
+# Recommended items:
+
+hasProcessingProvider=no
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=python
+
+homepage=https://github.com/eugenegesdisc/gpm-grid-data-reader
+category=Plugins
+icon=icon.png
+# experimental flag
+experimental=True
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
+# Since QGIS 3.8, a comma separated list of plugins to be installed
+# (or upgraded) can be specified.
+# Check the documentation for more information.
+# plugin_dependencies=
+
+Category of the plugin: Raster, Vector, Database or Web
+# category=
+
+# If the plugin can run on QGIS Server.
+server=False
+

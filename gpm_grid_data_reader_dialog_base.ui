@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GPMGridRasterReaderDialogBase</class>
+ <widget class="QDialog" name="GPMGridRasterReaderDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>462</width>
+    <height>298</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GPM Grid Data Reader</string>
+  </property>
+  <widget class="QDialogButtonBox" name="button_box">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>260</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Apply|QDialogButtonBox::Close|QDialogButtonBox::Help</set>
+   </property>
+   <property name="centerButtons">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButton">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>30</y>
+     <width>31</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>...</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>30</y>
+     <width>331</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Enter a path and filename</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>47</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Input</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>60</y>
+     <width>411</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Options</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>30</y>
+      <width>92</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to YES. Whether to set to nodata pixel values outside of the validity range indicated by valid_min, valid_max or valid_range attributes.</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Default</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Yes</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>60</y>
+      <width>92</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to NO. Whether X/Y dimensions should be always considered as geospatial axis, even if the lack conventional attributes confirming it.</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Default</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Yes</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_3">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>90</y>
+      <width>92</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to NO. If set to YES, and if the netCDF file only contains 2D variables of the same type and indexed by the same dimensions, then they should be reported as multiple bands of a same dataset. Default is NO (that is each variable will be reported as a separate subdataset)</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Default</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Yes</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_4">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>120</y>
+      <width>92</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to NO. Whether a Geographic CRS should be assumed and applied when, none has otherwise been found, a meaningful geotransform has been found, and that geotransform is within the bounds -180,360 -90,90, if YES assume OGC:CRS84.</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Default</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Yes</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_5">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>150</y>
+      <width>92</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to NO. Whether unusual linear axis unit (km) should be kept as such, instead of being normalized to metre. The default is NO, ie that are being normalized to metre (previous GDAL versions kept the original unit)</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Default</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Yes</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>271</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to YES. Whether to set to nodata pixel values outside of the validity range indicated by valid_min, valid_max or valid_range attributes.</string>
+    </property>
+    <property name="text">
+     <string>HONOUR_VALID_RANGE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>271</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to NO. Whether X/Y dimensions should be always considered as geospatial axis, even if the lack conventional attributes confirming it.</string>
+    </property>
+    <property name="text">
+     <string>IGNORE_XY_AXIS_NAME_CHECKS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>271</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to NO. If set to YES, and if the netCDF file only contains 2D variables of the same type and indexed by the same dimensions, then they should be reported as multiple bands of a same dataset. Default is NO (that is each variable will be reported as a separate subdataset)</string>
+    </property>
+    <property name="text">
+     <string>VARIABLES_AS_BANDS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>271</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to NO. Whether a Geographic CRS should be assumed and applied when, none has otherwise been found, a meaningful geotransform has been found, and that geotransform is within the bounds -180,360 -90,90, if YES assume OGC:CRS84.</string>
+    </property>
+    <property name="text">
+     <string>ASSUME_LONGLAT</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>271</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Defaults to NO. Whether unusual linear axis unit (km) should be kept as such, instead of being normalized to metre. The default is NO, ie that are being normalized to metre (previous GDAL versions kept the original unit)</string>
+    </property>
+    <property name="text">
+     <string>PRESERVE_AXIS_UNIT_IN_CRS</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>button_box</sender>
+   <signal>accepted()</signal>
+   <receiver>GPMGridRasterReaderDialogBase</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_box</sender>
+   <signal>rejected()</signal>
+   <receiver>GPMGridRasterReaderDialogBase</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
