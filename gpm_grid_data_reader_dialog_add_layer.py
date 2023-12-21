@@ -262,7 +262,7 @@ class GPMGridRasterReaderDialogAddLayer(QtWidgets.QDialog, FORM_CLASS):
 
         if _the_coord_order_reverse:
             _the_geotransform_array= [
-            _the_x_n,0.0, -_the_x_resolution,
+            _the_x_0,0.0, _the_x_resolution,
             _the_y_0,_the_y_resolution,0.0]
         else:
             _the_geotransform_array = [
