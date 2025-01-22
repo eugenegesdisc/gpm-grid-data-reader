@@ -135,7 +135,10 @@ class GPMGridRasterReaderDialogAddLayer(QtWidgets.QDialog, FORM_CLASS):
             _the_layer_name = f"{_the_filename}.{_the_ds_name}"
         else:
             _the_layer_name = _the_filename
-        if _the_ds.GetGeoTransform() != (0.0, 1.0, 0.0, 0.0, 0.0, 1.0):
+        the_version = gdal.VersionInfo()
+        # IGNORE_XY_AXIS_NAME_CHECKS=[YES/NOA]: (GDAL >= 3.4.0) 
+        if (not (int(the_version) < int('3040000')) and
+            _the_ds.GetGeoTransform() != (0.0, 1.0, 0.0, 0.0, 0.0, 1.0)):
             rlayer = self.iface.addRasterLayer(dataset_name,_the_layer_name, "gdal")
             if rlayer.isValid():
                 msgbox = QtWidgets.QMessageBox.information(
